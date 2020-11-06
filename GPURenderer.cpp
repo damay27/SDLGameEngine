@@ -50,9 +50,9 @@ int GPURenderer::draw(SDL_Texture* draw_texture, SDL_Rect* texture_sub_section, 
 	return SDL_RenderCopy(this->window_renderer, draw_texture, texture_sub_section, draw_rect);
 }
 
-int GPURenderer::draw(SpriteTexture& sprite_texture) {
-	return SDL_RenderCopy(this->window_renderer, sprite_texture.get_texture(), sprite_texture.get_sub_rect(), sprite_texture.get_draw_rect());
-}
+//int GPURenderer::draw(SpriteTexture& sprite_texture) {
+//	return SDL_RenderCopy(this->window_renderer, sprite_texture.get_texture(), sprite_texture.get_sub_rect(), sprite_texture.get_draw_rect());
+//}
 
 
 void GPURenderer::render() {

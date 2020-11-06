@@ -53,7 +53,7 @@ public:
 		Return:
 			0 on success negative value on failure.
 	*/
-	int draw(SpriteTexture& sprite_texture);
+	//int draw(SpriteTexture& sprite_texture);
 
 
 	/*

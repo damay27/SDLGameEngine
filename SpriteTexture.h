@@ -9,7 +9,8 @@
 class SpriteTexture
 {
 	SDL_Texture* texture;
-	SDL_Rect texture_sub_rect, draw_rect;
+	//SDL_Rect texture_sub_rect, draw_rect;
+	SDL_Rect texture_sub_rect;
 	int texture_width, texture_height;
 
 public:
@@ -60,15 +61,15 @@ public:
 			h : Height of the rectangle.
 
 	*/
-	void set_draw_rect(int x, int y, int w, int h);
+	//void set_draw_rect(int x, int y, int w, int h);
 
-	/*
-		Sets location and size of the sprite when it is drawn on screen.
+	///*
+	//	Sets location and size of the sprite when it is drawn on screen.
 
-		Parameters:
-			draw_rect : SDL_Rectangle object that defines the region that will be drawn.
-	*/
-	void set_draw_rect(SDL_Rect draw_rect);
+	//	Parameters:
+	//		draw_rect : SDL_Rectangle object that defines the region that will be drawn.
+	//*/
+	//void set_draw_rect(SDL_Rect draw_rect);
 
 	/*
 		Returns the rectangle that defines the subsection of the texture that will be drawn.
@@ -84,7 +85,7 @@ public:
 		Return:
 			Pointer to the internal rectangle object.
 	*/
-	SDL_Rect* get_draw_rect();
+	/*SDL_Rect* get_draw_rect();*/
 
 	/*
 		Returns a pointer to the sprite textue.
@@ -101,26 +102,26 @@ public:
 			x : Horizontal location.
 			y : Vertical location.
 	*/
-	void set_position(int x, int y);
+	//void set_position(int x, int y);
 
-	/*
-		Moves the sprite to a new location on screen.
+	///*
+	//	Moves the sprite to a new location on screen.
 
-		Parameters:
-			x : Movement along the horizontal axis.
-			y : Movement along the vertical axis.
+	//	Parameters:
+	//		x : Movement along the horizontal axis.
+	//		y : Movement along the vertical axis.
 
-	*/
-	void move(int x, int y);
+	//*/
+	//void move(int x, int y);
 
-	/*
-		Sets the size of the sprite on screen.
+	///*
+	//	Sets the size of the sprite on screen.
 
-		Parameters:
-			w : Horizontal size.
-			h : Vertical size.
-	*/
-	void set_dimensions(int w, int h);
+	//	Parameters:
+	//		w : Horizontal size.
+	//		h : Vertical size.
+	//*/
+	//void set_dimensions(int w, int h);
 
 	/*
 		Retreives the width and height of the textue. This is the width and
