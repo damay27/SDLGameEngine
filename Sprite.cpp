@@ -1,39 +1,39 @@
 #include "Sprite.h"
 #include "SDL.h"
 
-Sprite::Sprite(std::string path, SDL_Renderer* render_context, float pos_x, float pos_y, unsigned int width, unsigned int height) :
-	world_x(pos_x), world_y(pos_y), sprite_width(width), sprite_height(height), sprite_texture(path, render_context) {}
+Sprite::Sprite(std::string path, SDL_Renderer* render_context, int pos_x, int pos_y, int width, int height) :
+	SpriteTexture(path, render_context), world_x(pos_x), world_y(pos_y), x_resolution(width), y_resolution(height) {}
 
-void Sprite::move(float x, float y) {
+void Sprite::move(int x, int y) {
 	this->world_x += x;
 	this->world_y += y;
 }
 
 void Sprite::scale(float x, float y) {
-	this->sprite_width = (unsigned int) (this->sprite_width * x);
-	this->sprite_height = (unsigned int) (this->sprite_height * y);
+	this->x_resolution *= x;
+	this->y_resolution *= y;
 }
 
-void Sprite::set_position(float x, float y) {
+void Sprite::set_position(int x, int y) {
 	this->world_x = x;
 	this->world_y = y;
 }
 
-void Sprite::set_dimensions(unsigned int& w, unsigned int& h) {
-	this->sprite_width = w;
-	this->sprite_height = h;
+void Sprite::set_resolution(unsigned int w, unsigned int h) {
+	this->x_resolution = w;
+	this->y_resolution = h;
 }
 
-void Sprite::get_position(float& x, float& y) {
+void Sprite::get_position(int& x, int& y) {
 	x = this->world_x;
 	y = this->world_y;
 }
 
-void Sprite::get_dimensions(unsigned int& w, unsigned int& h) {
-	w = this->sprite_width;
-	h = this->sprite_height;
+void Sprite::get_resolution(unsigned int& w, unsigned int& h) {
+	w = this->x_resolution;
+	h = this->y_resolution;
 }
 
 SpriteTexture* Sprite::get_texture() {
-	return &(this->sprite_texture);
+	return this;
 }

@@ -11,7 +11,7 @@ class SpriteTexture
 	SDL_Texture* texture;
 	//SDL_Rect texture_sub_rect, draw_rect;
 	SDL_Rect texture_sub_rect;
-	int texture_width, texture_height;
+	int texture_x_resolution, texture_y_resolution;
 
 public:
 
@@ -127,7 +127,7 @@ public:
 		Retreives the width and height of the textue. This is the width and
 		height of the entire texture, NOT the sub-section that is drawn.
 	*/
-	void get_texture_width_height(int &width, int &height);
+	void get_texture_resolution(int &width, int &height);
 
 };
 

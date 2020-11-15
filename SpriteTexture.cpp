@@ -13,8 +13,8 @@ SpriteTexture::SpriteTexture(std::string file_path, SDL_Renderer* render_context
 	this->texture_sub_rect.h = image_surface->h;
 	//this->draw_rect.w = image_surface->w;
 	//this->draw_rect.h = image_surface->h;
-	this->texture_width = image_surface->w;
-	this->texture_height = image_surface->h;
+	this->texture_x_resolution = image_surface->w;
+	this->texture_y_resolution = image_surface->h;
 	SDL_FreeSurface(image_surface);
 }
 
@@ -83,7 +83,7 @@ SDL_Texture* SpriteTexture::get_texture() {
 //}
 
 
-void SpriteTexture::get_texture_width_height(int& width, int& height) {
-	width = this->texture_width;
-	height = this->texture_height;
+void SpriteTexture::get_texture_resolution(int& width, int& height) {
+	width = this->texture_x_resolution;
+	height = this->texture_y_resolution;
 }

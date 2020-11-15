@@ -5,12 +5,10 @@
 #include "SpriteTexture.h"
 #include <string>
 
-class Sprite
+class Sprite : public SpriteTexture
 {
-	SpriteTexture sprite_texture;
-
-	float world_x, world_y;
-	unsigned int sprite_width, sprite_height;
+	int world_x, world_y;
+	unsigned int x_resolution, y_resolution;
 
 public:
 
@@ -26,7 +24,7 @@ public:
 			width : Width of the sprite.
 			height : Height of the sprite.
 	*/
-	Sprite(std::string path, SDL_Renderer* render_context, float pos_x, float pos_y, unsigned int width, unsigned int height);
+	Sprite(std::string path, SDL_Renderer* render_context, int pos_x, int pos_y, int width, int height);
 
 	/*
 		Moves the sprite by the given amount.
@@ -35,7 +33,7 @@ public:
 			x : Amount to move along the horizontal axis.
 			y : Amount to move along the vertical axis.
 	*/
-	void move(float x, float y);
+	void move(int x, int y);
 
 	/*
 		Scales the sprite along each axis.
@@ -53,16 +51,16 @@ public:
 			x : The horizontal location of the sprite.
 			y : The vertical position of the sprite.
 	*/
-	void set_position(float x, float y);
+	void set_position(int x, int y);
 
 	/*
-		Sets the width and height of the sprite.
+	Sets the width and height of the sprite.
 
-		Parameters:
-			w : Width of the sprite.
-			h : Height of the sprite.
+	Parameters:
+		w : Width of the sprite.
+		h : Height of the sprite.
 	*/
-	void set_dimensions(unsigned int& w, unsigned int& h);
+	void set_resolution(unsigned int w, unsigned int h);
 
 	/*
 		Retrieves current position of the sprite.
@@ -71,7 +69,7 @@ public:
 			x : Referance to the variable to load the horizontal position to.
 			y : Referance to the variable to load the vertical position to.
 	*/
-	void get_position(float& x, float& y);
+	void get_position(int& x, int& y);
 
 	/*
 		Retrieves current dimensions of the sprite.
@@ -80,7 +78,7 @@ public:
 			w : Referance to the variable to load the width of the sprite into.
 			h : Referance to the variable to load the height of the sprite into.
 	*/
-	void get_dimensions(unsigned int& w, unsigned int& h);
+	void get_resolution(unsigned int& w, unsigned int& h);
 
 	/*
 		Returns a pointer to the internal texture.
