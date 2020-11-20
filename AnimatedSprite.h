@@ -2,6 +2,7 @@
 #ifndef ANIMATED_SPRITE_H
 #define ANIMATED_SPRITE_H
 
+#include "SpriteTexture.h"
 #include "Sprite.h"
 
 #include "SDL.h"
@@ -39,7 +40,7 @@ class AnimatedSprite : public Sprite
 
 
 public:
-		AnimatedSprite(std::string path, SDL_Renderer* render_context, float pos_x, float pos_y, unsigned int width, unsigned int height, int frame_width, int frame_height);
+		AnimatedSprite(SpriteTexture *texture, SDL_Renderer* render_context, float pos_x, float pos_y, unsigned int width, unsigned int height, int frame_width, int frame_height);
 
 		/*
 			Sets the size of a animation frame on the sprite sheet. This is different

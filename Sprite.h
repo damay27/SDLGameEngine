@@ -5,8 +5,10 @@
 #include "SpriteTexture.h"
 #include <string>
 
-class Sprite : public SpriteTexture
+class Sprite
 {
+	SpriteTexture* texture;
+	SDL_Rect texture_sub_rect;
 	int world_x, world_y;
 	unsigned int x_resolution, y_resolution;
 
@@ -24,7 +26,7 @@ public:
 			width : Width of the sprite.
 			height : Height of the sprite.
 	*/
-	Sprite(std::string path, SDL_Renderer* render_context, int pos_x, int pos_y, int width, int height);
+	Sprite(SpriteTexture* texture, SDL_Renderer* render_context, int pos_x, int pos_y, int width, int height);
 
 	/*
 		Moves the sprite by the given amount.
@@ -88,6 +90,33 @@ public:
 	*/
 	SpriteTexture* get_texture();
 
+	/*
+		Sets the region of the texture that will be drawn.
+
+		Parameters:
+			x : Horizontal location of the rectangle origin.
+			y : Vertical location of the rectangle origin.
+			w : Width of the rectangle.
+			h : Height of the rectangle.
+
+	*/
+	void set_sub_rect(int x, int y, int w, int h);
+
+	/*
+		Sets the region of the texture that will be drawn.
+
+		Parameters:
+			sub_rect : SDL_Rectangle object that defines the region that will be drawn.
+	*/
+	void set_sub_rect(SDL_Rect sub_rect);
+
+	/*
+		Returns the rectangle that defines the subsection of the texture that will be drawn.
+
+		Return:
+			Pointer to the internal rectangle object.
+	*/
+	SDL_Rect* get_sub_rect();
 };
 
 #endif

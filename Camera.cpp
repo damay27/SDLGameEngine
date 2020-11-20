@@ -37,7 +37,7 @@ int Camera::draw(Sprite& sprite) {
 
 	clear();
 
-	return GPURenderer::draw(sprite_texture->get_texture(), sprite_texture->get_sub_rect(), &draw_rect);
+	return GPURenderer::draw(sprite_texture->get_texture(), sprite.get_sub_rect(), &draw_rect);
 }
 
 //int draw_screen_space(Sprite& sprite) {

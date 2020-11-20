@@ -1,7 +1,7 @@
 #include "AnimatedSprite.h"
 
-AnimatedSprite::AnimatedSprite(std::string path, SDL_Renderer* render_context, float pos_x, float pos_y, unsigned int width, unsigned int height, int frame_width, int frame_height) :
-	Sprite(path, render_context, pos_x, pos_y, width, height), frame_width(frame_width), frame_height(frame_height), frame_index(0), sequence_index(0), last_draw_time(0)
+AnimatedSprite::AnimatedSprite(SpriteTexture* texture, SDL_Renderer* render_context, float pos_x, float pos_y, unsigned int width, unsigned int height, int frame_width, int frame_height) :
+	Sprite(texture, render_context, pos_x, pos_y, width, height), frame_width(frame_width), frame_height(frame_height), frame_index(0), sequence_index(0), last_draw_time(0)
 {
 	this->set_sub_rect(0, 0, frame_width, frame_height);
 }

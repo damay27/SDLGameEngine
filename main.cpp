@@ -39,9 +39,11 @@ int main() {
 	SDL_Color clear_color = { 255, 0, 0, 0 };
 	Camera camera("damay", 1280, 720, false, clear_color);
 
+	SpriteTexture sprite_sheet("./sprite_sheet_test.png", camera.get_render_context());
+
 	SpriteTexture sprite_texture("./test2.png", camera.get_render_context());
 
-	AnimatedSprite sprite("./sprite_sheet_test.png", camera.get_render_context(), 1, 1, 100, 100, 100, 100);
+	AnimatedSprite sprite(&sprite_sheet, camera.get_render_context(), 1, 1, 100, 100, 100, 100);
 	FrameSequence seq;
 	seq.frame_locations = std::vector<std::pair<int, int>>({ {0,0}, {1, 1}, {2,1} });
 	seq.frame_delay = 500;
@@ -63,7 +65,9 @@ int main() {
 		camera.draw(sprite);
 		camera.render();
 
-		camera.move(-1, -1);
+		sprite.move(1, 0);
+
+		//camera.move(-1, -1);
 	}
 
 	global_quit();
