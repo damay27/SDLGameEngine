@@ -15,7 +15,7 @@ class CPURenderer
 
 public:
 
-	CPURenderer(std::string window_name, int width, int height, bool full_screen, SDL_Color screen_color = { 0 });
+	CPURenderer(std::string window_name, int width, int height, bool full_screen, SDL_Color screen_color = { 0, 0, 0, 0 });
 	~CPURenderer();
 	//void gpu_render();
 	int draw(SDL_Surface* draw_surface, SDL_Rect* sub_section, int x, int y);

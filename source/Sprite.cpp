@@ -1,7 +1,7 @@
 #include "Sprite.h"
 #include "SDL.h"
 
-Sprite::Sprite(SpriteTexture* texture, SDL_Renderer* render_context, int pos_x, int pos_y, int width, int height) :
+Sprite::Sprite(SpriteTexture* texture, int pos_x, int pos_y, int width, int height) :
 	texture(texture), world_x(pos_x), world_y(pos_y), x_resolution(width), y_resolution(height)
 {
 	int x_res, y_res;

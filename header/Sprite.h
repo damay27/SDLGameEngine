@@ -20,13 +20,12 @@ public:
 
 		Parameters:
 			path : String containing the path to the image file.
-			render_context : SDL_Renderer object that is paired with a window.
 			pos_x : X position of the sprite.
 			pos_y : Y position of the sprite.
 			width : Width of the sprite.
 			height : Height of the sprite.
 	*/
-	Sprite(SpriteTexture* texture, SDL_Renderer* render_context, int pos_x, int pos_y, int width, int height);
+	Sprite(SpriteTexture* texture, int pos_x, int pos_y, int width, int height);
 
 	/*
 		Moves the sprite by the given amount.

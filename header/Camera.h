@@ -18,7 +18,7 @@ class Camera : public GPURenderer
 
 
 public:
-	Camera(std::string window_name, int window_width, int window_height, bool full_screen, SDL_Color clear_color = { 0 });
+	Camera(std::string window_name, int window_width, int window_height, bool full_screen, SDL_Color clear_color = { 0, 0, 0, 0 });
 	
 	void move(int x, int y);
 	void set_position(int x, int y);

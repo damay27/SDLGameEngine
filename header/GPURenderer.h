@@ -23,7 +23,7 @@ public:
 			full_screen : Controls if the window will be full screen.
 			clear_color : Color that is drawn to the screen with it is cleard.
 	*/
-	GPURenderer(std::string window_name, int width, int height, bool full_screen, SDL_Color clear_color = { 0 });
+	GPURenderer(std::string window_name, int width, int height, bool full_screen, SDL_Color clear_color = { 0, 0, 0, 0 });
 
 	/*
 		Destructor responsible for destroying both the window and the renderer objects.

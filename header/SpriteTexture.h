@@ -1,4 +1,3 @@
-
 #ifndef SPRIETEXTURE_H
 #define SPRIETEXTURE_H
 
@@ -11,6 +10,8 @@ class SpriteTexture
 	SDL_Texture* texture;
 	//SDL_Rect texture_sub_rect, draw_rect;
 	int texture_x_resolution, texture_y_resolution;
+
+	bool ready;
 
 public:
 
@@ -42,6 +43,14 @@ public:
 		height of the entire texture, NOT the sub-section that is drawn.
 	*/
 	void get_texture_resolution(int &width, int &height);
+
+	/*
+		Check if the texture object was setup correctly and is ready to be used.
+
+		Return:
+			Returns true when the object is setup correctly and false otherwise.
+	*/
+	bool is_ready();
 
 };
 
